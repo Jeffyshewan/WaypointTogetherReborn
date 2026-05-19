@@ -44,7 +44,7 @@ public class ClientNetwork
 
     private void HandlePacket(ShareWaypointPacket packet)
     {
-        if (ModConfig.ClientConfig.BlockSharedFromOthers) return;
+        if (ModConfig.ClientConfig?.BlockSharedFromOthers ?? false) return;
         
         if (lastMessage == packet.Message) return;
         lastMessage = packet.Message;
